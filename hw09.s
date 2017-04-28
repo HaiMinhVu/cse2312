@@ -7,8 +7,6 @@
 
 _start:
    mov r5, #10
-   mov r9, #0
-   mov r10, #10
 _read:
    mov r7, #3
    mov r0, #0
@@ -17,8 +15,7 @@ _read:
    swi 0
    ldr r3, [r1]
    sub r3, r3, #48
-   mul r11, r3, r5
-   add r9, r9, r11
+   mul r9, r3, r5
    mov r7, #3
    mov r0, #0
    mov r2, #2
@@ -26,8 +23,7 @@ _read:
    swi 0
    ldr r4, [r1]
    sub r4, r4, #48
-   mul r12, r4, r5
-   add r10, r10, r12
+   mul r10, r4, r5
    mov r3, #1
    ldr r6, =structures
    ldr r2, =outstring
@@ -45,9 +41,9 @@ _loop1:
 
 _readnum:
    ldr r5, [r6], #4
-   cmp r5, #40
+   cmp r5, r9
    blt _next
-   cmp r5, #60
+   cmp r5, r10
    bgt _next
    b _write
 _write:
