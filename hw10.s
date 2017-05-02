@@ -13,19 +13,17 @@ _read:
    mov r2, #2
    ldr r1, =number
    swi 0
-   ldrb r3, [r1]
+   ldr r3, [r1]
    sub r3, r3, #48
    mul r9, r3, r5
-
    mov r7, #3
    mov r0, #0
    mov r2, #2
    ldr r1, =number
    swi 0
-   ldrb r4, [r1]
+   ldr r4, [r1]
    sub r4, r4, #48
    mul r10, r4, r5
-
    mov r3, #1
    ldr r6, =structures
    ldr r2, =outstring
@@ -74,70 +72,70 @@ number:
    .space 2
 structures:
    .asciz "Aishwarya  "
-   .word 90
-   .asciz "Alexis     "
-   .word 42
-   .asciz "Andrew     "
-   .word 47
-   .asciz "Bora       "
-   .word 58
-   .asciz "Caleb      "
-   .word 64
-   .asciz "Carlos     "
-   .word 10
-   .asciz "Christopher"
-   .word 12
-   .asciz "Daniel     "
-   .word 3
-   .asciz "Francisco  "
-   .word 32
-   .asciz "George     "
-   .word 31
-   .asciz "Gerve-endy "
-   .word 21
-   .asciz "Gustavo    "
-   .word 90
-   .asciz "Hai        "
-   .word 57
-   .asciz "Irving     "
-   .word 37
-   .asciz "Ivan       "
-   .word 46
-   .asciz "Jacob      "
-   .word 9
-   .asciz "Jake       "
    .word 20
-   .asciz "James      "
-   .word 7
-   .asciz "Jamie      "
-   .word 36
-   .asciz "Jeovanni   "
+   .asciz "Alexis     "
+   .word 614
+   .asciz "Andrew     "
+   .word 500
+   .asciz "Bora       "
+   .word 275
+   .asciz "Caleb      "
+   .word 957
+   .asciz "Carlos     "
+   .word 999
+   .asciz "Christopher"
+   .word 64
+   .asciz "Daniel     "
+   .word 807
+   .asciz "Francisco  "
+   .word 420
+   .asciz "George     "
+   .word 16
+   .asciz "Gerve-endy "
    .word 80
-   .asciz "Kashif     "
-   .word 61
-   .asciz "Kenny      "
-   .word 82
-   .asciz "Kevan      "
+   .asciz "Gustavo    "
    .word 89
-   .asciz "Kyra       "
-   .word 60
-   .asciz "Luis       "
+   .asciz "Hai        "
+   .word 203
+   .asciz "Irving     "
+   .word 507
+   .asciz "Ivan       "
+   .word 188
+   .asciz "Jacob      "
+   .word 597
+   .asciz "Jake       "
+   .word 430
+   .asciz "James      "
+   .word 929
+   .asciz "Jamie      "
    .word 7
+   .asciz "Jeovanni   "
+   .word 117
+   .asciz "Kashif     "
+   .word 386
+   .asciz "Kenny      "
+   .word 649
+   .asciz "Kevan      "
+   .word 21
+   .asciz "Kyra       "
+   .word 289
+   .asciz "Luis       "
+   .word 179
    .asciz "Matthew    "
-   .word 13
+   .word 4
    .asciz "Micah      "
-   .word 85
+   .word 851
    .asciz "Nhan       "
-   .word 37
+   .word 117
    .asciz "Nicholas   "
-   .word 25
+   .word 790
    .asciz "Phuoc      "
-   .word 45
-   .asciz "Thomas     "
-   .word 65
-   .asciz "Travis     "
    .word 33
+   .asciz "Thomas     "
+   .word 130
+   .asciz "Travis     "
+   .word 429
    .asciz "Warren     "
-   .word 9
+   .word 1
    .asciz "William    "
-   .word 72
+   .word 123
