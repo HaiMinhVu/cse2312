@@ -1,5 +1,5 @@
 /*
-   Homework 9
+   Homework 10
    Hai Vu
 */
 
@@ -10,20 +10,22 @@ _start:
 _read:
    mov r7, #3
    mov r0, #0
-   mov r2, #2
+   mov r2, #4
    ldr r1, =number
    swi 0
-   ldr r3, [r1]
-   sub r3, r3, #48
-   mul r9, r3, r5
+
+   bl subroutine
+   mov r9, r7
+  
    mov r7, #3
    mov r0, #0
-   mov r2, #2
+   mov r2, #4
    ldr r1, =number
    swi 0
-   ldr r4, [r1]
-   sub r4, r4, #48
-   mul r10, r4, r5
+   
+   bl subroutine
+   mov r10, r7
+
    mov r3, #1
    ldr r6, =structures
    ldr r2, =outstring
@@ -65,11 +67,38 @@ _next:
 _exit:
    mov r7, #1
    swi 0
+
+subroutine:
+	mov r5, #2
+	mov r6, #1
+	mov r7, #0
+	mov r8, #10
+_loopsub:
+	cmp r5, #0
+	blt _out
+	ldrb r3, [r1, r5]
+	cmp r3, #0
+	beq _nextsub
+	cmp r3, #10
+	beq _nextsub
+	sub r3, r3, #48
+	mul r3, r6, r3
+	mul r6, r8, r6
+	add r7, r7, r3
+	sub r5, r5, #1
+	bal _loopsub
+_nextsub:
+	sub r5, r5, #1
+	b _loopsub
+_out:
+	bx lr
+
+
 .data
 outstring:
    .space 12
 number:
-   .space 2
+   .space 4
 structures:
    .asciz "Aishwarya  "
    .word 20
@@ -139,3 +168,4 @@ structures:
    .word 1
    .asciz "William    "
    .word 123
+
